@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>C'est quoi cette couleur ?</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/bulma.min.css" />
+        <link rel="icon" href="/static/favicon.png" />
+        <style>
+            html {
+                animation: bg;
+                animation-duration: 50s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+
+            @keyframes bg {
+                from {
+                    background: #550000;
+                }
+
+                20% {
+                    background: orange;
+                }
+
+                40% {
+                    background: yellow;
+                }
+
+                60% {
+                    background: #005500;
+                }
+
+                80% {
+                    background: #000055;
+                }
+
+                to {
+                    background: #824298;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+
+                <form method="post" action="/name-this" class="box column is-half is-offset-one-quarter">
+                    {% if error %}
+                        <p class="notification is-warning">
+                            <strong>Couleur invalide.</strong><br />
+                            La couleur doit être fournie sous sa forme hexadécimale (par exemple&nbsp;: <code>{{ random_color }}</code>).
+                            Si vous souhaitez la taper directement dans la barre d'URL, assurez-vous de sa syntaxe.
+                        </p>
+                    {% endif %}
+                    <label for="color" class="label">Choisis une couleur !</label>
+                    <input type="color" name="color" id="color" value="#{{ random_color }}" class="button" />
+                    <button type="submit" class="button">C'est quoi son p'tit nom ?</button>
+                </form>
+
+            </div>
+        </section>
+    </body>
+</html>

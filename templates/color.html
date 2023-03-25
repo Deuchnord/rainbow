@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>{{ colorname }}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/bulma.min.css" />
+        <style>
+            html {
+                background: #{{ colorhex }};
+            }
+
+            .title {
+                text-align: center;
+                margin-top: 150px;
+                color: #{{ text_color }};
+            }
+        </style>
+    </head>
+    <body>
+        <section class="section">
+            <div class="container">
+
+                <div class="column is-half is-offset-one-quarter">
+                    <h1 class="title is-1">{{ colorname }}</h1>
+                </div>
+
+            </div>
+        </section>
+    </body>
+</html>
